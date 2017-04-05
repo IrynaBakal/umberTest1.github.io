@@ -1,0 +1,142 @@
+body{
+	margin: 5px;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 47px;
+    min-width: 320px;
+}
+body *{
+	box-sizing: border-box;
+}
+ul{
+	padding-left: 25px;
+	li{
+		list-style-type: circle;
+		text-align:left;
+        line-height: 24px;
+	}
+}
+
+$bgColor: #CFE2F3;
+$fontSize: 18px;
+
+header,footer,.main,aside{
+	background: $bgColor;
+	border: 1px solid black;
+    font-size: $fontSize;
+}
+header,footer{
+	padding: 12px 15px;
+	text-align:center;
+    font-size: $fontSize+2;
+}
+header{
+	margin-bottom: 20px;
+}
+footer{
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+.container{
+	display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    margin-bottom: 10px;
+}
+.main{
+	display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% - 310px);
+    margin-right: 10px;
+    .slide{
+    	width: calc(33.3333% - 20px);
+    	margin: 10px;
+    	img{
+    		width: 100%;
+    		display: block;
+    	}
+    }
+}
+aside{
+    width: 300px;
+    flex-direction: column;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    overflow-y: auto;
+    text-align: right;
+}
+
+/* Media */
+
+@media screen and (max-width: 1000px){
+    .main .slide{
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 800px){
+    .main .slide{
+        width: calc(100% - 30px);
+        margin: 15px 20px;
+    }
+
+}
+
+@media screen and (max-width: 700px){
+    aside{
+        width: 250px;
+    }
+    .main{
+        width: calc(100% - 260px);
+    }
+}
+
+@media screen and (max-width: 620px){
+    body{
+       margin: 5px 10px; 
+    }
+    .container{
+        flex-wrap: wrap;
+        .main{
+            width: 100%;
+            margin: 0;
+            order: 2;
+        }
+        aside{
+            width: 100%;
+            order: 1;
+        }
+        .main,aside{
+            margin-bottom: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 340px){
+    body{
+        margin: 5px 0;
+        padding: 0 10px 47px 10px;
+    }
+    footer{
+        left: 10px;
+        right: 10px;
+        width: calc(100% - 20px);
+    }
+}
